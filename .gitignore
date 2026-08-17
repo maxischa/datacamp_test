@@ -1,0 +1,25 @@
+.DS_Store
+Icon?
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Classeur source telecharge par build_data.py (45 Mo, non commite)
+_source_online_retail_ii.xlsx
+
+# --- Ce qui reste LOCAL -------------------------------------------------
+# Le depot public est purement etudiant. Tout ce qui contient des notes de
+# passation, des indices a ne pas donner trop tot ou des solutions hors
+# correction reste sur la machine de l'enseignant.
+
+# Notebooks intervenant : minutage, notes de passation, pieges attendus.
+bloc2_donnees/intervenant/
+
+# La chaine de generation : outils/contenu/seanceN.py contient MOT POUR MOT
+# les notes intervenant et toutes les solutions. La publier reviendrait a
+# publier les notebooks intervenant.
+outils/
+
+# Syllabus de travail de l'equipe enseignante, pas un document etudiant.
+Syllabus.docx
+Syllabus_détaillé_enseignants.docx
