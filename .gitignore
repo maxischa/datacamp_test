@@ -18,7 +18,7 @@ _source_online_retail_ii.xlsx
 # creation, sans que personne ne s'en apercoive.
 bloc*/intervenant/
 
-# La chaine de generation : outils/contenu/seanceN.py contient MOT POUR MOT
+# La chaine de generation : outils/contenu/<bloc>/seanceN.py contient MOT POUR MOT
 # les notes intervenant et toutes les solutions. La publier reviendrait a
 # publier les notebooks intervenant.
 outils/

@@ -25,12 +25,11 @@ après.
 | 2.3 | Agréger et croiser plusieurs tables | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance3_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance3_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance3_correction.ipynb) |
 | 2.4 | Visualiser et conclure — étude de cas | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance4_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance4_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance4_correction.ipynb) |
 
-📄 **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert
-pendant les exercices.
+📄 **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
 
 ---
 
-## Les données du bloc 2
+### Les données du bloc 2
 
 Un détaillant en ligne européen, décembre 2010 à décembre 2011.
 Les fichiers se chargent **directement depuis le web** : rien à télécharger.
@@ -47,6 +46,38 @@ Construction reproductible par [`bloc2_donnees/data/build_data.py`](bloc2_donnee
 
 ---
 
+## Bloc 3 — Interpréter des données (8h)
+
+Quatre séances de 2h. Pour chacune : le notebook de **cours** est suivi en
+séance, les **exercices** se font en autonomie, la **correction** est publiée
+après.
+
+| Séance | Sujet | Cours | Exercices | Correction |
+|---|---|---|---|---|
+| 3.1 | Décrire une distribution | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/corrections/seance1_correction.ipynb) |
+| 3.2 | Comparer deux groupes — hasard ou vrai écart ? | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/exercices/seance2_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/corrections/seance2_correction.ipynb) |
+| 3.3 | Relier deux variables — y a-t-il un lien ? | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance3_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/exercices/seance3_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/corrections/seance3_correction.ipynb) |
+| 3.4 | Régression linéaire — expliquer, et de combien | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance4_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/exercices/seance4_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/corrections/seance4_correction.ipynb) |
+
+📄 **[Aide-mémoire statistiques](ressources/cheatsheet_stats.md)** · **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
+
+---
+
+### Les données du bloc 3
+
+Le même détaillant que le bloc 2, mais à une **maille** différente :
+on ne raisonne plus par ligne de vente, on raisonne par commande et
+par client — des individus statistiques comparables entre eux.
+
+| Fichier | Lignes | Contenu |
+|---|---|---|
+| `commandes.csv` | 1 955 | Une commande par ligne : `cmd_id`, `date`, `jour`, `ca`, `nart`, `qte`, `pays`, `client_id` |
+| `clients_ca.csv` | 472 | Un client par ligne : `client_id`, `ca`, `ncmd`, `nprod`, `anc`, `pays` |
+
+Dérivées des fichiers du bloc 2 par [`bloc3_stats/data/build_data.py`](bloc3_stats/data/build_data.py).
+
+---
+
 ## Pour l'équipe enseignante
 
 Ce dépôt est **purement étudiant**. La chaîne de production du cours reste sur
@@ -54,7 +85,7 @@ la machine de l'enseignant et n'est pas publiée :
 
 | Reste local | Pourquoi |
 |---|---|
-| `bloc2_donnees/intervenant/` | cours minuté, notes de passation, pièges attendus |
+| `bloc*/intervenant/` | cours minuté, notes de passation, pièges attendus |
 | `outils/` | la source dont les notebooks sont générés — contient les mêmes notes et toutes les solutions |
 | `Syllabus*.docx` | documents de travail de l'équipe |
 
@@ -64,13 +95,14 @@ ne peut donc pas diverger entre le notebook d'exercices et sa correction, et
 une solution ne peut pas se retrouver par accident dans le notebook remis aux
 étudiants.
 
-Côté enseignant, deux commandes :
+Côté enseignant, trois commandes :
 
 ```bash
-python outils/construire_notebooks.py   # regenere les 16 notebooks
+python outils/construire_notebooks.py   # regenere les notebooks
+python outils/construire_readme.py      # regenere cette page
 python outils/verifier_notebooks.py     # les execute tous et controle les regles
 ```
 
 L'adresse de ce dépôt est définie à un seul endroit (`outils/depot.py`) :
 la changer et regénérer suffit à mettre à jour tous les badges « Open in
-Colab » et toutes les URL de données.
+Colab », tous les liens de cette page et toutes les URL de données.
