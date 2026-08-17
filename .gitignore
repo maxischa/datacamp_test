@@ -13,7 +13,10 @@ _source_online_retail_ii.xlsx
 # correction reste sur la machine de l'enseignant.
 
 # Notebooks intervenant : minutage, notes de passation, pieges attendus.
-bloc2_donnees/intervenant/
+# Le motif couvre TOUS les blocs, y compris ceux qui n'existent pas encore :
+# un chemin fige sur bloc2 publierait les notes du bloc 3 le jour de sa
+# creation, sans que personne ne s'en apercoive.
+bloc*/intervenant/
 
 # La chaine de generation : outils/contenu/seanceN.py contient MOT POUR MOT
 # les notes intervenant et toutes les solutions. La publier reviendrait a
