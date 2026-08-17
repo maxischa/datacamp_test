@@ -23,3 +23,8 @@ outils/
 # Syllabus de travail de l'equipe enseignante, pas un document etudiant.
 Syllabus.docx
 Syllabus_détaillé_enseignants.docx
+
+# Dossier a deposer dans Google Drive : copies derivees des notebooks, sans
+# badge Colab. Regenerable par `python outils/construire_drive.py`, et le
+# publier ici ne ferait que dupliquer le contenu du depot.
+distribution_drive/
