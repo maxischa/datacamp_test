@@ -12,11 +12,35 @@ Introduction à Python pour la collecte et l'analyse de données — 36 heures.
 
 ---
 
+## Bloc 1 — Prise en main de Python et de Colab (2h)
+
+Une séance de 2h. Le notebook de **cours** est suivi en séance, les **exercices** se font en autonomie, la **correction** est publiée après.
+
+| Séance | Sujet | Cours | Exercices | Correction |
+|---|---|---|---|---|
+| 1.1 | Prise en main — Colab, Markdown et vos premières lignes | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc1_python/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc1_python/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc1_python/corrections/seance1_correction.ipynb) |
+
+📄 **[Bien démarrer — surtout sur tablette](ressources/setup_tablette.md)** — à garder ouvert pendant les exercices.
+
+---
+
+### Les données du bloc 1
+
+Un seul fichier, minuscule, pour la dernière cellule de la séance :
+charger des données depuis le web tient en une ligne, et c'est tout
+le bloc 2 qui commence là.
+
+| Fichier | Lignes | Contenu |
+|---|---|---|
+| `premieres_ventes.csv` | 20 | Vingt lignes du détaillant du bloc 2 : `date`, `produit`, `qte`, `prix`, `pays` |
+
+Extrait de `bloc2_donnees/data/ventes.csv`. Construction reproductible par [`bloc1_python/data/build_data.py`](bloc1_python/data/build_data.py).
+
+---
+
 ## Bloc 2 — Collecter, comprendre et manipuler des données (8h)
 
-Quatre séances de 2h. Pour chacune : le notebook de **cours** est suivi en
-séance, les **exercices** se font en autonomie, la **correction** est publiée
-après.
+4 séances de 2h. Pour chacune : le notebook de **cours** est suivi en séance, les **exercices** se font en autonomie, la **correction** est publiée après.
 
 | Séance | Sujet | Cours | Exercices | Correction |
 |---|---|---|---|---|
@@ -48,9 +72,7 @@ Construction reproductible par [`bloc2_donnees/data/build_data.py`](bloc2_donnee
 
 ## Bloc 3 — Interpréter des données (8h)
 
-Quatre séances de 2h. Pour chacune : le notebook de **cours** est suivi en
-séance, les **exercices** se font en autonomie, la **correction** est publiée
-après.
+4 séances de 2h. Pour chacune : le notebook de **cours** est suivi en séance, les **exercices** se font en autonomie, la **correction** est publiée après.
 
 | Séance | Sujet | Cours | Exercices | Correction |
 |---|---|---|---|---|
@@ -80,9 +102,7 @@ Dérivées des fichiers du bloc 2 par [`bloc3_stats/data/build_data.py`](bloc3_s
 
 ## Bloc 4 — Introduction au machine learning (8h)
 
-Quatre séances de 2h. Pour chacune : le notebook de **cours** est suivi en
-séance, les **exercices** se font en autonomie, la **correction** est publiée
-après.
+4 séances de 2h. Pour chacune : le notebook de **cours** est suivi en séance, les **exercices** se font en autonomie, la **correction** est publiée après.
 
 | Séance | Sujet | Cours | Exercices | Correction |
 |---|---|---|---|---|
