@@ -78,6 +78,42 @@ Dérivées des fichiers du bloc 2 par [`bloc3_stats/data/build_data.py`](bloc3_s
 
 ---
 
+## Bloc 4 — Introduction au machine learning (8h)
+
+Quatre séances de 2h. Pour chacune : le notebook de **cours** est suivi en
+séance, les **exercices** se font en autonomie, la **correction** est publiée
+après.
+
+| Séance | Sujet | Cours | Exercices | Correction |
+|---|---|---|---|---|
+| 4.1 | Prédire un nombre — expliquer n'est pas prédire | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/corrections/seance1_correction.ipynb) |
+| 4.2 | Prédire une décision — qui va résilier ? | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/exercices/seance2_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/corrections/seance2_correction.ipynb) |
+| 4.3 | Arbres et forêts — ce qui fait vraiment la prédiction | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance3_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/exercices/seance3_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/corrections/seance3_correction.ipynb) |
+| 4.4 | Segmenter sans étiquette — quatre clients, quatre traitements | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance4_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/exercices/seance4_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/corrections/seance4_correction.ipynb) |
+
+📄 **[Aide-mémoire machine learning](ressources/cheatsheet_ml.md)** · **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
+
+---
+
+### Les données du bloc 4
+
+Deux terrains. Le détaillant des blocs 2 et 3 sert à prédire un montant
+et à segmenter la clientèle ; un opérateur télécom sert à prédire une
+résiliation, parce qu'il offre une cible binaire nette et des facteurs
+explicatifs bien plus riches.
+
+| Fichier | Lignes | Contenu |
+|---|---|---|
+| `churn.csv` | 7 043 | Un abonné télécom par ligne : `anc`, `mensuel`, `total`, `contrat`, `internet`, `paiement`, `senior`, `couple`, `support`, `churn` |
+| `commandes.csv` | 1 955 | Une commande du détaillant, reprise du bloc 3 |
+| `clients_rfm.csv` | 472 | Un client par ligne : `recence`, `freq`, `montant`, `pays` |
+| `produits_profil.csv` | 1 263 | Une référence vendue au moins 10 fois : `nb_cmd`, `qte`, `ca`, `prix`, `pays`, `clients`, `part_q4` |
+
+Churn : [IBM Telco Customer Churn](https://github.com/IBM/telco-customer-churn-on-icp4d). Le reste dérive des
+fichiers du bloc 2. Construction reproductible par [`bloc4_ml/data/build_data.py`](bloc4_ml/data/build_data.py).
+
+---
+
 ## Pour l'équipe enseignante
 
 Ce dépôt est **purement étudiant**. La chaîne de production du cours reste sur

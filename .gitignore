@@ -4,8 +4,9 @@ Icon?
 __pycache__/
 *.pyc
 
-# Classeur source telecharge par build_data.py (45 Mo, non commite)
-_source_online_retail_ii.xlsx
+# Fichiers sources telecharges par les build_data.py, jamais commites :
+# le classeur retail (45 Mo) et le CSV telco brut.
+_source_*
 
 # --- Ce qui reste LOCAL -------------------------------------------------
 # Le depot public est purement etudiant. Tout ce qui contient des notes de
