@@ -179,6 +179,86 @@ Règles : **trier avant de tracer** des barres · `barh` plutôt que `bar` sur
 
 ---
 
+## Pour la partie 2 des feuilles d'exercices
+
+Les commandes ci-dessous n'apparaissent pas dans les notebooks de cours : elles
+sont introduites directement dans les énoncés de la partie 2. Elles sont
+regroupées ici pour que vous les retrouviez sans rouvrir la feuille.
+
+### Découvrir
+
+```python
+df.tail(10)                      # les 10 dernieres lignes
+df.dtypes                        # le type de chaque colonne
+df.describe(include="all")       # resume, colonnes texte comprises
+df.set_index("cmd_id")           # une colonne devient l'index
+df.index.is_unique               # l'index se repete-t-il ?
+df.iloc[:, :3]                   # les 3 premieres colonnes
+df.iloc[:, :-2]                  # toutes sauf les 2 dernieres
+```
+
+### Compter et proportionner
+
+```python
+df["pays"].value_counts(normalize=True) * 100   # des parts, pas des effectifs
+df.groupby("categorie").size()                  # compter les lignes d'un groupe
+(df.isna().mean() * 100).round(2)               # taux de manquants par colonne
+serie.cumsum()                                  # cumul, pour les "80 % du CA"
+```
+
+### Chercher dans du texte
+
+```python
+df["libelle"].str.startswith("Vintage")   # commence par
+df["prod_id"].str.isalpha()               # que des lettres, aucun chiffre
+df["cat"].str.strip().str.lower()         # enlever espaces et casse
+```
+
+### Dates
+
+```python
+serie.dt.day_name()             # lundi, mardi... (en anglais)
+serie.dt.to_period("M")         # le mois, format 2011-10
+(serie.max() - serie.min()).days   # une duree en jours
+```
+
+### Regrouper plus finement
+
+```python
+df.groupby(["pays", "mois"])["ca"].sum()               # deux cles
+df.sort_values(["pays", "ca"], ascending=[True, False])  # deux cles, deux sens
+df.groupby("pays").head(3)                             # les 3 premiers DE CHAQUE groupe
+serie.unstack()                                        # le 2e niveau passe en colonnes
+df.idxmax(axis=1)                                      # le maximum le long de chaque LIGNE
+pd.crosstab(a, b, normalize="index") * 100             # chaque ligne ramenee a 100 %
+```
+
+### Joindre sans perdre de lignes
+
+```python
+a.merge(b, on="prod_id")                                  # ne garde que ce qui existe des DEUX cotes
+a.merge(b, on="prod_id", how="left", indicator=True)      # garde tout a gauche
+resultat["_merge"].value_counts()                         # ce qui a trouve, ce qui n'a pas trouve
+```
+
+> ⚠️ Un `merge` par défaut **supprime en silence** les lignes sans correspondance.
+> `how="left"` les garde, et `indicator=True` vous dit lesquelles. Vérifiez toujours
+> `len()` avant et après.
+
+### Repérer les valeurs aberrantes sans seuil arbitraire
+
+```python
+q1 = df["qte"].quantile(0.25)
+q3 = df["qte"].quantile(0.75)
+seuil = q3 + 1.5 * (q3 - q1)      # la regle de l'ecart interquartile
+df[df["qte"] > seuil]
+```
+
+> Cette règle sert à **regarder**, pas à supprimer automatiquement. Une grosse
+> commande de grossiste dépasse le seuil sans être une erreur.
+
+---
+
 ## Les erreurs les plus fréquentes
 
 | Message | Cause | Solution |
