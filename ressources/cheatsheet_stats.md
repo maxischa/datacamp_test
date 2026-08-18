@@ -157,6 +157,80 @@ smf.ols("ca ~ qte + pays", cmd).fit()     # une qualitative : une modalite
 
 ---
 
+## Pour la partie 2 des feuilles d'exercices
+
+Ces commandes ne sont pas dans les notebooks de cours : les énoncés de la
+partie 2 les introduisent au fil de l'eau. Elles sont regroupées ici.
+
+### Décrire plus finement
+
+```python
+df.groupby("pays")["ca"].describe()      # un describe() par groupe
+pd.qcut(df["ca"], 10, labels=False)      # dix groupes de MEME EFFECTIF
+pd.cut(df["ca"], [0, 200, 500, 1e9])     # tranches de largeur choisie
+df.boxplot(column="ca", by="pays")       # boites a moustaches comparees
+serie.cumsum()                           # cumul, pour les courbes de concentration
+serie.std() / serie.mean()               # coefficient de variation
+```
+
+### Tester
+
+```python
+stats.mannwhitneyu(a, b)                 # compare sans supposer de moyenne
+stats.f_oneway(g1, g2, g3, ...)          # plus de deux groupes a la fois
+0.05 / nombre_de_tests                   # seuil corrige (Bonferroni)
+```
+
+**La force d'une dépendance, après un khi-deux** — le V de Cramér :
+
+```python
+khi2, p, ddl, attendus = stats.chi2_contingency(tab)
+n = tab.values.sum()
+cramer = np.sqrt(khi2 / (n * (min(tab.shape) - 1)))
+```
+
+| V de Cramér | Lecture |
+|---|---|
+| moins de 0,1 | lien négligeable, même si p est minuscule |
+| 0,1 à 0,3 | lien faible |
+| au-delà de 0,3 | lien marqué |
+
+**Où se situe la dépendance** — les résidus standardisés, au-delà de 2 en
+valeur absolue :
+
+```python
+att = pd.DataFrame(attendus, index=tab.index, columns=tab.columns)
+(tab - att) / np.sqrt(att)
+```
+
+> ⚠️ Le khi-deux exige des effectifs **attendus** d'au moins 5.
+> `(attendus < 5).sum()` avant de citer la p-value ; sinon, regroupez les
+> petites modalités.
+
+### Relier
+
+```python
+np.log(serie)                            # redresse une relation courbe
+np.cov(a, b)[0, 1]                       # covariance : depend des unites
+plt.imshow(m, cmap="coolwarm", vmin=-1, vmax=1)   # matrice de correlation
+```
+
+> ⚠️ Une corrélation calculée sur des données **agrégées** est toujours plus
+> forte : 0,38 par commande, 0,87 par client, 0,94 par pays — mêmes données.
+> Précisez toujours le niveau d'observation.
+
+### Régresser
+
+```python
+m.conf_int()                  # intervalles de confiance des coefficients
+m.conf_int().loc["qte"]       # celui d'une variable precise
+m.resid                       # les residus, alignes sur les lignes du tableau
+m.resid.idxmax()              # la ligne que le modele rate le plus
+resume.filter(like="pays", axis=0)   # ne garder que les modalites d'une qualitative
+```
+
+---
+
 ## Les erreurs les plus fréquentes du bloc 3
 
 | Message | Cause | Solution |
