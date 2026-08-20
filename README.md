@@ -140,9 +140,9 @@ Six heures en trois temps. Le notebook de **cours** occupe les deux premières h
 
 | Séance | Sujet | Cours | Exercices | Correction |
 |---|---|---|---|---|
-| 5.1 | Causalité et A/B testing — mesurer ce qu'une campagne fait vraiment | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/corrections/seance1_correction.ipynb) |
+| 5.1 | A/B testing — causalité et expériences randomisées | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/corrections/seance1_correction.ipynb) |
 
-📄 **[Aide-mémoire A/B testing](ressources/cheatsheet_abtest.md)** · **[Aide-mémoire statistiques](ressources/cheatsheet_stats.md)** — à garder ouvert pendant les exercices.
+📄 **[Aide-mémoire statistiques](ressources/cheatsheet_stats.md)** — à garder ouvert pendant les exercices.
 
 ---
 
