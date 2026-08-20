@@ -106,8 +106,8 @@ df["gamme"] = pd.cut(df["prix"], bins=[0, 1, 5, 20, 10000],
                      labels=["entree", "eco", "milieu", "premium"])
 ```
 
-> Si vous écrivez une **boucle `for`** sur les lignes d'un DataFrame,
-> il existe presque toujours une façon vectorisée. Cherchez-la.
+> On écrit la règle **une fois, sur la colonne entière** : pandas
+> l'applique à chaque ligne. Pas besoin de traiter les lignes une à une.
 
 ---
 

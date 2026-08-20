@@ -34,7 +34,30 @@ Correction de texte**, puis désactiver :
 
 ---
 
-## 2. Demander la version « ordinateur » du site
+## 2. Désactiver l'assistant IA de Colab (Gemini)
+
+**À faire quel que soit votre matériel.**
+
+Colab propose **Gemini**, un assistant qui complète votre code pendant que vous
+tapez et propose de le réécrire. Pendant ce cours, coupez-le.
+
+Ce n'est pas une méfiance de principe : vous êtes là pour apprendre à écrire
+ces lignes, et une suggestion acceptée sans être comprise ne vous apprend rien.
+Elle vous prive même de l'erreur qui vous l'aurait apprise. Le bloc 6 est
+entièrement consacré à ces outils — vous les réactiverez à ce moment-là, en
+sachant juger ce qu'ils proposent.
+
+**Outils → Paramètres → IA générative**, puis décocher ce qui y est proposé
+(complétion de code, suggestions automatiques). Refermez également le volet
+Gemini s'il occupe la droite de l'écran : il prend beaucoup de place sur un
+petit écran.
+
+> ⚠️ Le réglage peut revenir tout seul après une mise à jour de Colab.
+> Un coup d'œil en début de séance suffit.
+
+---
+
+## 3. Demander la version « ordinateur » du site
 
 Google Colab affiche une interface réduite sur mobile, où plusieurs boutons
 sont cachés.
@@ -47,7 +70,7 @@ sont cachés.
 
 ---
 
-## 3. ⚠️ Toujours « Enregistrer une copie dans Drive »
+## 4. ⚠️ Toujours « Enregistrer une copie dans Drive »
 
 Quand vous ouvrez un notebook du cours, vous ouvrez le **fichier du
 professeur**, en lecture seule. Si vous tapez dedans et fermez l'onglet,
@@ -63,7 +86,7 @@ vous travaillez. Vous le retrouverez ensuite dans
 
 ---
 
-## 4. Exécuter une cellule
+## 5. Exécuter une cellule
 
 Sans clavier physique, `Maj+Entrée` n'existe pas. Utilisez le bouton **▶**
 qui apparaît à gauche de chaque cellule quand vous la sélectionnez.
@@ -73,7 +96,7 @@ Pour tout relancer depuis le début (à faire si quelque chose part en vrac) :
 
 ---
 
-## 5. Écrire les caractères pénibles
+## 6. Écrire les caractères pénibles
 
 Ces caractères reviennent en permanence en Python. Sur le clavier virtuel :
 
@@ -95,7 +118,7 @@ puis **Copier / Coller** : c'est plus rapide et plus sûr que de le retaper.
 
 ---
 
-## 6. Si Colab refuse de s'ouvrir
+## 7. Si Colab refuse de s'ouvrir
 
 Si votre compte Google est bloqué par l'établissement ou si Colab est
 indisponible, une solution de secours fonctionne **sans aucun compte** :
