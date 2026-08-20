@@ -13,14 +13,14 @@ sans qu'on sache l'expliquer ne se déploie jamais.
 ```python
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.tree import DecisionTreeClassifier, plot_tree, export_text
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
+from sklearn.tree import plot_tree, export_text
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.inspection import permutation_importance, PartialDependenceDisplay
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from sklearn.metrics import accuracy_score, confusion_matrix, roc_auc_score
+from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
 from sklearn.metrics import precision_score, recall_score, silhouette_score
 ```
 
@@ -33,6 +33,7 @@ X = donnees[["colonne_a", "colonne_b"]]     # ce qu'on connait
 y = donnees["cible"]                        # ce qu'on veut prevoir
 
 X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=42)
+# random_state : n'importe quel nombre, du moment qu'il est FIXE
 
 m = LinearRegression().fit(X_tr, y_tr)      # on APPREND sur X_tr
 p = m.predict(X_te)                         # on PREDIT sur X_te
@@ -76,12 +77,23 @@ proba = m.predict_proba(X_te)[:, 1]   # la PROBABILITE, colonne 1
 pred = (proba > 0.30).astype(int)     # le seuil est VOTRE decision
 ```
 
-| Mesure | Ce qu'elle dit | Quand elle trompe |
+### Les quatre cases
+
+|  | prédit : négatif | prédit : positif |
 |---|---|---|
-| justesse | part de bonnes réponses | **toujours**, sur données déséquilibrées |
-| précision | parmi ceux qu'on cible, combien à raison | ignore ceux qu'on a ratés |
-| rappel | parmi les vrais cas, combien retrouvés | ignore les fausses alertes |
-| AUC | qualité à tous les seuils | ne dit pas quel seuil prendre |
+| **négatif vraiment** | vrai négatif (VN) | **faux positif** (FP) — une action pour rien |
+| **positif vraiment** | **faux négatif** (FN) — un cas raté | vrai positif (VP) |
+
+| Mesure | Formule | Ce qu'elle dit | Quand elle trompe |
+|---|---|---|---|
+| justesse | (VN + VP) / total | part de bonnes réponses | **toujours**, sur données déséquilibrées |
+| précision | VP / (VP + FP) | parmi ceux qu'on cible, combien à raison | ignore ceux qu'on a ratés |
+| rappel | VP / (VP + FN) | parmi les vrais cas, combien retrouvés | ignore les fausses alertes |
+| F1 | 2 × préc. × rappel / (préc. + rappel) | les deux tiennent-elles ensemble | traite les deux erreurs comme si elles coûtaient pareil |
+
+> 💡 Le F1 est une moyenne **harmonique** : elle est tirée vers le bas par la
+> plus faible des deux. Appeler tout le monde donne un rappel de 1 et une
+> précision de 0,27 — moyenne ordinaire 0,63, F1 seulement 0,42.
 
 > ⚠️ **Toujours commencer par le modèle nul.** Prédire la classe majoritaire
 > donne ici 73,4 % de justesse et zéro client sauvé.
@@ -97,37 +109,45 @@ def gain(seuil, cout_contact, marge, taux_succes):
 
 ---
 
-## Arbres, forêts, et l'interprétation (4.3)
+## Arbres de décision et interprétation (4.3)
+
+Un arbre pose des questions à seuil en cascade et prédit la même chose pour
+tout un groupe. `max_depth` = le nombre de questions posées à la suite : une
+question de plus **double** le nombre de groupes possibles.
 
 ```python
 a = DecisionTreeClassifier(max_depth=3, random_state=42).fit(X_tr, y_tr)
 print(export_text(a, feature_names=list(X.columns)))     # les regles, en texte
-plot_tree(a, feature_names=list(X.columns), max_depth=2, filled=True)
 
-f = RandomForestClassifier(n_estimators=200, random_state=42).fit(X_tr, y_tr)
+# impurity=False : sans le gini, qu'on ne sait pas lire a ce stade
+plot_tree(a, feature_names=list(X.columns), max_depth=2, filled=True, impurity=False)
 
-cross_val_score(a, X_tr, y_tr, cv=5, scoring="roc_auc").mean()   # sans toucher au test
+cross_val_score(a, X_tr, y_tr, cv=5, scoring="f1").mean()   # sans toucher au test
 ```
 
-### Les trois mesures d'importance
+### Les deux mesures d'importance, et le sens
 
 ```python
-# 1. Native — gratuite, mais BIAISEE vers les variables a nombreuses valeurs
-pd.Series(f.feature_importances_, index=X.columns).nlargest(5)
+# 1. Native — gratuite, ARBRES SEULEMENT, et BIAISEE vers les variables
+#    a nombreuses valeurs (une colonne de bruit pur peut sortir premiere)
+pd.Series(a.feature_importances_, index=X.columns).nlargest(5)
 
-# 2. Permutation — sur le TEST, sur la vraie metrique : celle a croire
-pi = permutation_importance(f, X_te, y_te, n_repeats=5,
-                            random_state=42, scoring="roc_auc")
+# 2. Permutation — sur le TEST, sur la metrique choisie, et sur N'IMPORTE
+#    QUEL modele : arbre, regression lineaire, logistique, pipeline...
+pi = permutation_importance(modele, X_te, y_te, n_repeats=5,
+                            random_state=42, scoring="f1")
 pd.Series(pi.importances_mean, index=X.columns).nlargest(5)
 
 # 3. Dependance partielle — le SENS de l'effet, pas seulement sa force
-PartialDependenceDisplay.from_estimator(f, X_te, ["anc"])
+PartialDependenceDisplay.from_estimator(a, X_te, ["anc"])
 ```
 
 | Ce que vous voyez | Ce qu'on en dit |
 |---|---|
 | native et permutation se contredisent | croyez la permutation : la native favorise les variables continues |
-| une variable disparaît quand on ajoute sa jumelle | deux colonnes redondantes se cachent mutuellement leur importance |
+| une importance vaut zéro | ce modèle-là ne s'en sert pas — ça ne veut **pas** dire que la variable est inutile |
+| deux réglages séparés par moins que le bruit entre plis | ils ne sont pas départageables : prenez le plus simple |
+| le même trio ressort sur deux familles de modèles | c'est ce qui rend une recommandation solide |
 | variable importante mais non actionnable | intéressante pour comprendre, inutile pour décider |
 
 > ⚠️ **Une importance se mesure sur des données jamais vues**, comme tout le
@@ -162,8 +182,14 @@ Xs = StandardScaler().fit_transform(np.log1p(donnees[variables]))
 km = KMeans(n_clusters=4, n_init=10, random_state=42).fit(Xs)
 donnees["groupe"] = km.labels_
 
-km.inertia_                              # compacite : la courbe du coude
-silhouette_score(Xs, km.labels_)         # separation entre groupes
+km.inertia_          # somme des carres des distances au centre de son groupe.
+                     # BASSE = groupes serres, mais elle baisse TOUJOURS quand
+                     # k monte : on cherche le coude, pas la valeur.
+silhouette_score(Xs, km.labels_)
+                     # pour chaque point : (b - a) / max(a, b), avec a sa
+                     # distance moyenne aux siens et b au groupe voisin.
+                     # Entre -1 et 1. HAUTE = groupes bien separes.
+                     # > 0,7 tres nets (rare) | 0,3 a 0,5 normal | < 0 mal place
 km.transform(Xs)                         # distance de chaque point a chaque centre
 ```
 
