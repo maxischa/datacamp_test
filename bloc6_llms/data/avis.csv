@@ -1,0 +1,52 @@
+id,text,rating,type,sentiment,sarcasm
+44,"Une expérience exceptionnelle, personne ne répond depuis une semaine",1,sarcastique,negatif,1
+41,"Bravo, le colis est arrivé complètement écrasé",1,sarcastique,negatif,1
+47,"Service impeccable, quatre messages envoyés et toujours aucune réponse",1,sarcastique,negatif,1
+13,Interface intuitive et fonctionnalités très utiles,5,positif,positif,0
+25,Impossible à installer correctement malgré plusieurs essais,2,negatif,negatif,0
+32,Expérience frustrante du début à la fin,1,negatif,negatif,0
+18,"Produit décevant, il ne fonctionne déjà plus",1,negatif,negatif,0
+33,Le produit chauffe énormément et s'éteint tout seul,1,negatif,negatif,0
+4,"Produit pratique, simple à utiliser et fiable",4,positif,positif,0
+31,La commande n'est jamais arrivée,1,negatif,negatif,0
+14,Commande reçue en avance et parfaitement emballée,5,positif,positif,0
+9,"Très bonne expérience, je commanderai à nouveau",5,positif,positif,0
+50,Ravi de découvrir que la garantie ne couvre précisément pas mon problème,1,sarcastique,negatif,1
+7,Application claire et agréable à utiliser,4,positif,positif,0
+48,"Produit fantastique, surtout quand il décide tout seul de s'éteindre",1,sarcastique,negatif,1
+5,Très bonne qualité pour ce prix,5,positif,positif,0
+37,"Parfait, ma commande est arrivée avec seulement trois semaines de retard",1,sarcastique,negatif,1
+34,Je ne recommande absolument pas ce produit,1,negatif,negatif,0
+20,Livraison beaucoup trop lente et colis abîmé,1,negatif,negatif,0
+49,Quelle bonne idée d'avoir retiré la seule fonctionnalité que j'utilisais,2,sarcastique,negatif,1
+16,Service impeccable du début à la fin,5,positif,positif,0
+10,Produit solide et vraiment pratique au quotidien,4,positif,positif,0
+17,"Produit efficace, je le conseille sans hésiter",4,positif,positif,0
+27,Interface confuse et beaucoup trop lente,2,negatif,negatif,0
+45,"Magnifique, la mise à jour a supprimé toutes mes préférences",1,sarcastique,negatif,1
+26,Le produit est arrivé cassé,1,negatif,negatif,0
+12,Fonctionne très bien depuis plusieurs mois,4,positif,positif,0
+1,"Excellent produit, exactement ce que je cherchais",5,positif,positif,0
+46,J'adore payer un abonnement pour une application qui ne démarre pas,1,sarcastique,negatif,1
+28,La batterie tient à peine quelques heures,2,negatif,negatif,0
+35,"Génial, il est tombé en panne après seulement deux jours",1,sarcastique,negatif,1
+6,Livraison rapide et produit conforme à mes attentes,5,positif,positif,0
+30,Aucune des fonctionnalités annoncées ne marche correctement,1,negatif,negatif,0
+38,"Excellent, l'application plante à chaque fois que je l'ouvre",1,sarcastique,negatif,1
+2,"Très satisfait de mon achat, tout fonctionne parfaitement",5,positif,positif,0
+22,Service client désagréable et aucune solution proposée,1,negatif,negatif,0
+3,"Service rapide et efficace, je recommande ce vendeur",5,positif,positif,0
+40,"Quelle merveille, la batterie est vide avant même la fin de la matinée",2,sarcastique,negatif,1
+36,"Super, encore quarante minutes perdues avec le service client",1,sarcastique,negatif,1
+24,Je suis très déçu par la qualité,1,negatif,negatif,0
+42,"Merci pour cette livraison express, douze jours seulement",1,sarcastique,negatif,1
+11,"Je suis ravi, l'installation a été très facile",5,positif,positif,0
+23,Produit fragile et mal conçu,2,negatif,negatif,0
+19,"Très mauvaise qualité, je regrette mon achat",1,negatif,negatif,0
+51,Un vrai plaisir de recommencer toute l'installation après chaque mise à jour,1,sarcastique,negatif,1
+21,L'application plante constamment et devient inutilisable,1,negatif,negatif,0
+8,Le service client a répondu rapidement et a résolu mon problème,5,positif,positif,0
+43,"Très pratique, je dois redémarrer l'appareil à chaque utilisation",1,sarcastique,negatif,1
+15,"Bonne surprise, la qualité dépasse mes attentes",5,positif,positif,0
+29,Beaucoup trop cher pour une qualité aussi médiocre,1,negatif,negatif,0
+39,"Formidable, j'ai payé deux fois plus cher pour recevoir le mauvais produit",1,sarcastique,negatif,1

@@ -164,6 +164,36 @@ Construction reproductible par [`bloc5_abtest/data/build_data.py`](bloc5_abtest/
 
 ---
 
+## Bloc 6 — Science des données et LLMs (4h)
+
+Quatre heures en deux temps. Le notebook de **cours** occupe les deux premières heures — comprendre un LLM, puis les moyens de l'augmenter — et se termine par la création de votre clé API. L'**atelier** occupe les deux suivantes ; sa **correction** est publiée après.
+
+| Séance | Sujet | Cours | Exercices | Correction |
+|---|---|---|---|---|
+| 6.1 | Science des données et LLMs | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc6_llms/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc6_llms/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc6_llms/corrections/seance1_correction.ipynb) |
+
+📄 **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
+
+---
+
+### Les données du bloc 6
+
+Cinquante et un avis clients, dont un tiers **sarcastiques** : « Une
+expérience exceptionnelle, personne ne répond depuis une semaine ». Le
+sarcasme est le terrain d'entente du bloc, parce que le sentiment réel y
+dépend du rapport entre deux morceaux de phrase — exactement ce qu'un
+classifieur spécialisé et un LLM génératif ne traitent pas de la même façon.
+
+| Fichier | Lignes | Contenu |
+|---|---|---|
+| `avis.csv` | 51 | Un avis par ligne : `text`, `rating`, `type`, `sentiment`, `sarcasm` |
+
+Avis **fictifs, écrits pour ce cours** : il n'y a pas de source publique, donc pas de `build_data.py`
+reproductible comme dans les autres blocs. Ce fichier n'est pas un benchmark et les taux de réussite
+mesurés en séance ne valent que pour lui.
+
+---
+
 ## Pour l'équipe enseignante
 
 Ce dépôt est **purement étudiant**. La chaîne de production du cours reste sur
