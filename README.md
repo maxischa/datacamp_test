@@ -134,6 +134,36 @@ fichiers du bloc 2. Construction reproductible par [`bloc4_ml/data/build_data.py
 
 ---
 
+## Bloc 5 — A/B testing (6h)
+
+Six heures en trois temps. Le notebook de **cours** occupe les deux premières heures, l'**étude de cas** les deux suivantes, et la **correction** — publiée après — sert de support aux deux dernières.
+
+| Séance | Sujet | Cours | Exercices | Correction |
+|---|---|---|---|---|
+| 5.1 | Causalité et A/B testing — mesurer ce qu'une campagne fait vraiment | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/corrections/seance1_correction.ipynb) |
+
+📄 **[Aide-mémoire A/B testing](ressources/cheatsheet_abtest.md)** · **[Aide-mémoire statistiques](ressources/cheatsheet_stats.md)** — à garder ouvert pendant les exercices.
+
+---
+
+### Les données du bloc 5
+
+Une **vraie expérience randomisée** : 64 000 clients d'un site de vente
+en ligne, tirés au sort entre trois campagnes email. C'est la
+randomisation qui autorise à parler d'effet causal — pas la taille du
+fichier.
+
+| Fichier | Lignes | Contenu |
+|---|---|---|
+| `hillstrom.csv` | 64 000 | Un client par ligne. Avant : `recency`, `history`, `mens`, `womens`, `zip_code`, `newbie`, `channel`. Tiré au sort : `segment`. Après : `visit`, `conversion`, `spend` |
+| `online_classroom.csv` | 323 | L'essai randomisé « cours en ligne » du cours : `format_ol`, `format_blended`, `falsexam` |
+
+Kevin Hillstrom, [*The MineThatData E-Mail Analytics and Data Mining Challenge*](https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html), 2008.
+L'essai « cours en ligne » vient du [Causal Inference for the Brave and True](https://matheusfacure.github.io/python-causality-handbook/) (MIT).
+Construction reproductible par [`bloc5_abtest/data/build_data.py`](bloc5_abtest/data/build_data.py).
+
+---
+
 ## Pour l'équipe enseignante
 
 Ce dépôt est **purement étudiant**. La chaîne de production du cours reste sur
