@@ -39,7 +39,7 @@ cmd["ca"].nunique()           # nombre de valeurs distinctes
 | Ce que vous lisez | Ce qu'on en dit |
 |---|---|
 | moyenne ≫ médiane | distribution asymétrique : **citez la médiane** |
-| écart-type > moyenne | il n'y a pas de valeur typique du tout |
+| écart-type > moyenne | **indicateur** de dispersion très forte : ne citez pas la moyenne seule |
 | un groupe à faible effectif | ne commentez pas : regardez `count` d'abord |
 
 ```python
@@ -48,9 +48,19 @@ top = cmd["ca"].sort_values(ascending=False)
 100 * top.head(int(0.10 * len(cmd))).sum() / top.sum()
 ```
 
-> **Jamais de moyenne de moyennes.** `df.groupby("pays")["ca"].mean().mean()`
-> donne le même poids à un pays de 800 commandes et à un pays d'une seule.
-> Repartez toujours des données individuelles.
+```python
+# Moyenne ponderee : chaque groupe compte a hauteur de son effectif
+pp = cmd.groupby("pays")["ca"].agg(["count", "mean"])
+(pp["mean"] * pp["count"]).sum() / pp["count"].sum()   # = cmd["ca"].mean()
+np.average(pp["mean"], weights=pp["count"])            # la version courte
+```
+
+> **Une moyenne de moyennes est une moyenne _non pondérée_.**
+> `df.groupby("pays")["ca"].mean().mean()` donne le même poids à un pays de
+> 800 commandes et à un pays d'une seule. Elle répond à « à quoi ressemble un
+> marché moyen ? », pas à « quel est le panier moyen ? ». Pour un indicateur
+> qui porte sur les commandes : pondérez, ou repartez des données
+> individuelles.
 
 ---
 
@@ -235,12 +245,15 @@ resume.filter(like="pays", axis=0)   # ne garder que les modalites d'une qualita
 
 | Message | Cause | Solution |
 |---|---|---|
+| `ValueError: percentiles should all be in the interval [0, 1]` | `quantile(90)` au lieu de `quantile(0.9)` | un quantile est une **proportion** |
+| `ValueError: Cannot take a larger sample than population` | `sample()` sans `replace=True` | pour un rééchantillonnage, la remise est obligatoire |
+| `ValueError: Bin labels must be one fewer than the number of bin edges` | `pd.cut` : autant d'étiquettes que de bornes | 4 bornes → 3 étiquettes |
 | `TypeError: Could not convert string ... to numeric` | moyenne sur du texte | vérifiez la colonne |
-| `ValueError: could not convert string to float` | corrélation sur du texte | pour une qualitative, c'est un khi-deux |
 | `AttributeError: 'OLS' object has no attribute 'summary'` | `.fit()` oublié | `smf.ols(...).fit().summary()` |
 | `pvalue = nan` **sans erreur** | un des deux groupes est vide | vérifiez l'orthographe du filtre |
 | une prédiction énorme **sans erreur** | extrapolation hors du domaine | comparez au `min` et au `max` observés |
-| une moyenne fausse **sans erreur** | moyenne de moyennes | repartez des données individuelles |
+| une moyenne inattendue **sans erreur** | moyenne non pondérée de moyennes | pondérez, ou repartez des données individuelles |
+| une corrélation nulle **sans erreur** | relation non linéaire | tracez le nuage de points |
 
 > **Ne lisez que la dernière ligne d'un message d'erreur.** Et méfiez-vous
 > surtout des trois lignes de ce tableau qui n'en produisent aucun.
