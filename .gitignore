@@ -28,6 +28,12 @@ outils/
 Syllabus.docx
 Syllabus_détaillé_enseignants.docx
 
+# Environnement de travail local de l'enseignant. Un etudiant n'installe rien :
+# tout se passe dans Colab. Publier un Pipfile laisserait croire le contraire.
+Pipfile
+Pipfile.lock
+.venv/
+
 # Dossier a deposer dans Google Drive : copies derivees des notebooks, sans
 # badge Colab. Regenerable par `python outils/construire_drive.py`, et le
 # publier ici ne ferait que dupliquer le contenu du depot.
