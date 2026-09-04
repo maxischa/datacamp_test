@@ -14,9 +14,9 @@ Introduction à Python pour la collecte et l'analyse de données — 36 heures.
 
 ## Bloc 1 — Prise en main de Python et de Colab (2h)
 
-Une séance de 2h. Le notebook de **cours** est suivi en séance, les **exercices** se font en autonomie, la **correction** est publiée après.
+Une séance de 2h. Le notebook de **cours** contient aussi les exercices : on montre une technique, vous la refaites aussitôt — d'abord un exercice à trous, puis un que vous écrivez entièrement. Les **exercices optionnels** sont là pour aller plus loin, et la **correction** — le cours entier, solutions comprises — est publiée après.
 
-| Séance | Sujet | Cours | Exercices | Correction |
+| Séance | Sujet | Cours + exercices | Optionnels | Correction |
 |---|---|---|---|---|
 | 1.1 | Prise en main — Colab, Markdown et vos premières lignes | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc1_python/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc1_python/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc1_python/corrections/seance1_correction.ipynb) |
 
@@ -40,9 +40,9 @@ Extrait de `bloc2_donnees/data/ventes.csv`. Construction reproductible par [`blo
 
 ## Bloc 2 — Collecter, comprendre et manipuler des données (8h)
 
-4 séances de 2h. Pour chacune : le notebook de **cours** est suivi en séance, les **exercices** se font en autonomie, la **correction** est publiée après.
+4 séances de 2h. Pour chacune, le notebook de **cours** alterne démonstration et pratique : on montre une technique, vous la refaites aussitôt, d'abord à trous puis de zéro. Les **exercices optionnels** vont plus loin ; la **correction** reprend le cours entier avec les solutions. Pour la séance 2.4, la dernière colonne n'est pas facultative : c'est l'**étude de cas en binôme**, qui occupe la seconde heure.
 
-| Séance | Sujet | Cours | Exercices | Correction |
+| Séance | Sujet | Cours + exercices | Optionnels | Correction |
 |---|---|---|---|---|
 | 2.1 | Charger et comprendre un jeu de données | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance1_correction.ipynb) |
 | 2.2 | Nettoyer des données réelles | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance2_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance2_correction.ipynb) |
