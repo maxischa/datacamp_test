@@ -34,6 +34,11 @@ Pipfile
 Pipfile.lock
 .venv/
 
+# Brouillons de travail deposes a la main (copies de notebooks ouvertes dans
+# le Jupyter local, annotees, a reporter dans outils/contenu/). Elles portent
+# des solutions et des notes de passation : le depot public n'en veut pas.
+improvements/
+
 # Dossier a deposer dans Google Drive : copies derivees des notebooks, sans
 # badge Colab. Regenerable par `python outils/construire_drive.py`, et le
 # publier ici ne ferait que dupliquer le contenu du depot.
