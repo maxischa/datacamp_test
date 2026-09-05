@@ -191,34 +191,3 @@ classifieur spécialisé et un LLM génératif ne traitent pas de la même faço
 Avis **fictifs, écrits pour ce cours** : il n'y a pas de source publique, donc pas de `build_data.py`
 reproductible comme dans les autres blocs. Ce fichier n'est pas un benchmark et les taux de réussite
 mesurés en séance ne valent que pour lui.
-
----
-
-## Pour l'équipe enseignante
-
-Ce dépôt est **purement étudiant**. La chaîne de production du cours reste sur
-la machine de l'enseignant et n'est pas publiée :
-
-| Reste local | Pourquoi |
-|---|---|
-| `bloc*/intervenant/` | cours minuté, notes de passation, pièges attendus |
-| `outils/` | la source dont les notebooks sont générés — contient les mêmes notes et toutes les solutions |
-| `Syllabus*.docx` | documents de travail de l'équipe |
-
-Les quatre variantes d'une séance (cours, intervenant, exercices, correction)
-sont **générées depuis une source unique**, une variante par usage. Un énoncé
-ne peut donc pas diverger entre le notebook d'exercices et sa correction, et
-une solution ne peut pas se retrouver par accident dans le notebook remis aux
-étudiants.
-
-Côté enseignant, trois commandes :
-
-```bash
-python outils/construire_notebooks.py   # regenere les notebooks
-python outils/construire_readme.py      # regenere cette page
-python outils/verifier_notebooks.py     # les execute tous et controle les regles
-```
-
-L'adresse de ce dépôt est définie à un seul endroit (`outils/depot.py`) :
-la changer et regénérer suffit à mettre à jour tous les badges « Open in
-Colab », tous les liens de cette page et toutes les URL de données.
