@@ -63,6 +63,16 @@ df.query("pays == @mon_pays")                 # @ = variable Python
 
 > ⚠️ Guillemets **doubles** à l'extérieur, **simples** à l'intérieur.
 
+Une comparaison rend **une réponse Vrai/Faux par ligne** — c'est ce que les
+crochets consomment, et ça se compte :
+
+```python
+df["prix"] > 50            # une reponse par ligne : True ou False
+(df["prix"] > 50).sum()    # combien de True : un True vaut 1
+(df["prix"] > 50).mean()   # leur part, entre 0 et 1
+df.isna().sum()            # le meme comptage, colonne par colonne
+```
+
 ---
 
 ## Nettoyer

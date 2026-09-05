@@ -70,11 +70,23 @@ r2_score(y_te, p)                     # part expliquee, sans unite
 ```python
 X = pd.get_dummies(donnees.drop(columns=["cible"]), drop_first=True).astype(float)
 
-m = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
+m = make_pipeline(StandardScaler(), LogisticRegression())
 m.fit(X_tr, y_tr)
 
 proba = m.predict_proba(X_te)[:, 1]   # la PROBABILITE, colonne 1
 pred = (proba > 0.30).astype(int)     # le seuil est VOTRE decision
+
+# Une comparaison rend des Vrai/Faux : astype(int) les convertit en 1/0,
+# sum() les compte, & croise deux conditions ligne a ligne
+(proba > 0.30).sum()                  # combien d'appels a passer
+((pred == 1) & (y_te == 1)).sum()     # appeles ET reellement partants
+
+# Un calcul qu'on rejoue a plusieurs seuils : on lui donne un nom
+def gain(seuil):
+    p = (proba > seuil).astype(int)
+    return ((p == 1) & (y_te == 1)).sum() * 90 - p.sum() * 15
+
+gain(0.30)                            # l'appel ; sans return, il rendrait None
 ```
 
 ### Les quatre cases

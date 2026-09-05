@@ -71,8 +71,11 @@ fr = cmd.query("pays == 'France'")["ca"]
 de = cmd.query("pays == 'Allemagne'")["ca"]
 
 # L'intervalle de confiance a 95 %, par reechantillonnage
-boot = pd.Series([fr.sample(len(fr), replace=True, random_state=i).mean()
-                  for i in range(1000)])
+moyennes = []
+for i in range(1000):
+    moyennes.append(fr.sample(len(fr), replace=True, random_state=i).mean())
+
+boot = pd.Series(moyennes)   # une liste devient une colonne pandas
 boot.quantile(0.025), boot.quantile(0.975)
 
 # Le test
@@ -108,6 +111,7 @@ round(irl.mean() - uk.mean(), 2)             # la taille de l'effet, en euros
 cmd["taille"] = pd.cut(cmd["ca"], [0, 200, 500, 1e9],
                        labels=["petite", "moyenne", "grande"])
 tab = pd.crosstab(cmd["pays"], cmd["taille"])
+# Quatre resultats, quatre noms, DANS L'ORDRE (inverser ne leve aucune erreur)
 khi2, p, ddl, attendus = stats.chi2_contingency(tab)
 
 # Ou est la dependance ? Dans les ecarts a l'attendu, jamais dans la p-value
