@@ -184,6 +184,17 @@ plt.tight_layout()
 plt.show()
 ```
 
+Plusieurs vues cote a cote — pour comparer, l'echelle doit etre partagee :
+
+```python
+fig, ax = plt.subplots(1, 3, figsize=(7, 2.6), sharey=True)
+ax[0].scatter(df["qte"], df["ca"], s=6, alpha=0.3, color="grey")
+ax[1].scatter(...)                       # meme code, autres donnees
+ax[0].set_title("avant", fontsize=9)     # un titre court par panneau
+ax[0].set_ylabel("ca (euros)")           # une seule etiquette suffit
+plt.show()
+```
+
 Règles : **trier avant de tracer** des barres · `barh` plutôt que `bar` sur
 écran étroit · toujours un titre et une unité.
 
