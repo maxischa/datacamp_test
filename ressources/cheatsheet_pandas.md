@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 pd.set_option("display.max_columns", 12)
 pd.set_option("display.width", 80)
 
-BASE = "https://raw.githubusercontent.com/maxischa/datacamp_test/main/bloc2_donnees/data/"
+BASE = "https://cdn.jsdelivr.net/gh/maxischa/datacamp_test@3a2db8c/bloc2_donnees/data/"
 df = pd.read_csv(BASE + "ventes.csv")
 ```
 
