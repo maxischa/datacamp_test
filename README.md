@@ -38,16 +38,15 @@ Extrait de `bloc2_donnees/data/ventes.csv`. Construction reproductible par [`blo
 
 ---
 
-## Bloc 2 — Collecter, comprendre et manipuler des données (8h)
+## Bloc 2 — Collecter, comprendre et manipuler des données (6h)
 
-4 séances de 2h. Pour chacune, le notebook de **cours** alterne démonstration et pratique : on montre une technique, vous la refaites aussitôt, d'abord à trous puis de zéro. Les **exercices optionnels** vont plus loin ; la **correction** reprend le cours entier avec les solutions. Pour la séance 2.4, la dernière colonne n'est pas facultative : c'est l'**étude de cas en binôme**, qui occupe la seconde heure.
+3 séances de 2h. Pour chacune, le notebook de **cours** alterne démonstration et pratique : on montre une technique, vous la refaites aussitôt, d'abord à trous puis de zéro. Les **exercices optionnels** vont plus loin ; la **correction** reprend le cours entier avec les solutions.
 
 | Séance | Sujet | Cours + exercices | Optionnels | Correction |
 |---|---|---|---|---|
 | 2.1 | Charger et comprendre un jeu de données | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance1_correction.ipynb) |
 | 2.2 | Nettoyer des données réelles | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance2_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance2_correction.ipynb) |
-| 2.3 | Agréger et croiser plusieurs tables | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance3_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance3_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance3_correction.ipynb) |
-| 2.4 | Visualiser et conclure — étude de cas | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance4_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance4_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance4_correction.ipynb) |
+| 2.3 | Agréger, croiser et visualiser | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance3_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/exercices/seance3_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/corrections/seance3_correction.ipynb) |
 
 📄 **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
 
