@@ -44,7 +44,9 @@ improvements/
 # publier ici ne ferait que dupliquer le contenu du depot.
 distribution_drive/
 
-# Page locale listant tous les notebooks, regenerable par
-# `python outils/construire_index.py`. Le point d'entree public reste le
+# Pages locales de liens vers les notebooks, regenerables par
+# `python outils/construire_pages.py`. Le point d'entree public reste le
 # README : GitHub l'affiche, alors qu'un .html s'y telechargerait.
-index.html
+course.html
+exercises.html
+solutions.html
