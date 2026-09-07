@@ -43,3 +43,8 @@ improvements/
 # badge Colab. Regenerable par `python outils/construire_drive.py`, et le
 # publier ici ne ferait que dupliquer le contenu du depot.
 distribution_drive/
+
+# Page locale listant tous les notebooks, regenerable par
+# `python outils/construire_index.py`. Le point d'entree public reste le
+# README : GitHub l'affiche, alors qu'un .html s'y telechargerait.
+index.html
