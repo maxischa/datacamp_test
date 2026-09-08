@@ -44,9 +44,9 @@ improvements/
 # publier ici ne ferait que dupliquer le contenu du depot.
 distribution_drive/
 
-# Pages locales de liens vers les notebooks, regenerables par
-# `python outils/construire_pages.py`. Le point d'entree public reste le
-# README : GitHub l'affiche, alors qu'un .html s'y telechargerait.
-course.html
-exercises.html
-solutions.html
+# Pages locales : les listes de liens (course/exercises/solutions) et les
+# aide-memoire rendus depuis ressources/*.md. Toutes regenerables par
+# `python outils/construire_pages.py`, d'ou le motif plutot qu'une ligne par
+# fichier. Le point d'entree public reste le README : GitHub l'affiche, alors
+# qu'un .html s'y telechargerait — et les aide-memoire restent publies en .md.
+/*.html
