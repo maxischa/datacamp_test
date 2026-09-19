@@ -292,6 +292,44 @@ Immobilier : voir [les données du bloc 2 (version 2)](#les-données-du-bloc-2-v
 
 ---
 
+## Bloc 4 — Introduction au machine learning (8h)
+
+2 séances de 4h. Pour chacune : deux heures de **cours** suivies en séance, puis deux heures d'**exercices** — on prédit d'abord un prix au mètre carré, puis on construit un radar qui repère les biens de prestige et on chiffre en euros le coût de chaque erreur. La **correction** est publiée après.
+
+| Séance | Sujet | Cours | Exercices | Correction |
+|---|---|---|---|---|
+| 4.1 | Le Machine Learning : prédire n'est pas expliquer | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/corrections/seance1_correction.ipynb) |
+| 4.2 | Prédire une décision — qui va résilier ? | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/exercices/seance2_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/corrections/seance2_correction.ipynb) |
+
+📚 **Pour aller plus loin**
+
+- **Les deux séances que le parcours allégé ne reprend pas** — [4.3 — Arbres de décision et interprétation ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance3_cours.ipynb) · [4.4 — Segmenter sans étiquette ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance4_cours.ipynb)
+- **Le bloc 4 de la version 1, en quatre séances** — [4.1 — Prédire n'est pas expliquer ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance1_cours.ipynb) · [4.2 — Prédire une décision ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance2_cours.ipynb) · [4.3 — Arbres de décision ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance3_cours.ipynb) · [4.4 — Segmenter sans étiquette ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml/cours/seance4_cours.ipynb)
+
+📄 **[Aide-mémoire machine learning](ressources/cheatsheet_ml.md)** · **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
+
+---
+
+### Les données du bloc 4 (version 2)
+
+Trois terrains. Le **cours** garde ceux de la version 1 : les commandes
+du détaillant pour prédire un montant, un opérateur télécom pour prédire
+une résiliation. Les **exercices** restent sur l'immobilier parisien, et
+bouclent le fil ouvert au bloc 2 — le fichier que vous avez nettoyé
+devient enfin un modèle.
+
+| Fichier | Lignes | Contenu |
+|---|---|---|
+| `commandes.csv` | 1 955 | Une commande par ligne — repris du bloc 4 de la version 1, pour la séance 4.1 |
+| `churn.csv` | 7 043 | Un abonné télécom par ligne : `anc`, `mensuel`, `total`, `contrat`, `internet`, `paiement`, `senior`, `couple`, `support`, `churn` — pour la séance 4.2 |
+| `immo_paris_2024.csv` | 25 209 | Les ventes d'appartements parisiens de 2024 — les deux feuilles d'exercices |
+
+Churn : [IBM Telco Customer Churn](https://github.com/IBM/telco-customer-churn-on-icp4d). Commandes : dérivées des
+fichiers du bloc 2 par [`bloc4_ml/data/build_data.py`](bloc4_ml/data/build_data.py).
+Immobilier : voir [les données du bloc 2 (version 2)](#les-données-du-bloc-2-version-2) — servi depuis `bloc2_donnees_v2/data/`, et **ne se régénère pas**.
+
+---
+
 ## Bloc 5 — A/B testing (6h)
 
 Identique à la version 1 : mêmes notebooks, rien à dupliquer.
