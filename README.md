@@ -222,11 +222,11 @@ Identique à la version 1 : mêmes notebooks, rien à dupliquer.
 
 ## Bloc 2 — Collecter, comprendre et manipuler des données (6h)
 
-Six heures en deux temps. Le notebook de **cours** occupe les deux premières heures et contient aussi ses exercices : on montre une technique, vous la refaites aussitôt. L'**étude de cas** occupe les quatre suivantes — un export immobilier parisien de 61 000 lignes, du fichier brut jusqu'à la carte des prix. La **correction** reprend le cours entier avec ses solutions, puis le corrigé de l'étude de cas.
+Six heures en deux temps. Le notebook de **cours** occupe les deux premières heures et contient aussi ses exercices : on montre une technique, vous la refaites aussitôt. L'**étude de cas** occupe les quatre suivantes — un export immobilier parisien de 61 000 lignes, du fichier brut jusqu'à la carte des prix. Chacun des deux a sa **solution**, publiée après la séance qu'il occupe.
 
-| Séance | Sujet | Cours + exercices | Étude de cas | Correction |
-|---|---|---|---|---|
-| 2.1 | Charger, comprendre et nettoyer une base de données | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance1_correction.ipynb) |
+| Séance | Sujet | Cours + exercices | Solution cours + exercices | Étude de cas | Solution étude de cas |
+|---|---|---|---|---|---|
+| 2.1 | Charger, comprendre et nettoyer une base de données | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance1_correction.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance1_correction_etude.ipynb) |
 
 📚 **Pour aller plus loin**
 
@@ -258,9 +258,9 @@ Immobilier : demandes de valeurs foncières géolocalisées ([DGFiP / Etalab](ht
 
 ## Bloc 3 — Interpréter des données (8h)
 
-2 séances de 4h. Pour chacune : deux heures de **cours** suivies en séance, puis deux heures d'**exercices** — un long exercice d'un seul tenant sur l'immobilier parisien, qui reprend le fichier là où le bloc 2 l'avait laissé. La **correction** est publiée après.
+2 séances de 4h. Pour chacune : deux heures de **cours** suivies en séance, puis deux heures d'**étude de cas** — un seul long exercice sur l'immobilier parisien, qui reprend le fichier là où le bloc 2 l'avait laissé. La **correction** est publiée après.
 
-| Séance | Sujet | Cours | Exercices | Correction |
+| Séance | Sujet | Cours | Étude de cas | Correction |
 |---|---|---|---|---|
 | 3.1 | Décrire une distribution | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/corrections/seance1_correction.ipynb) |
 | 3.2 | Comparer deux groupes — hasard ou vrai écart ? | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/exercices/seance2_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/corrections/seance2_correction.ipynb) |
@@ -294,9 +294,9 @@ Immobilier : voir [les données du bloc 2 (version 2)](#les-données-du-bloc-2-v
 
 ## Bloc 4 — Introduction au machine learning (8h)
 
-2 séances de 4h. Pour chacune : deux heures de **cours** suivies en séance, puis deux heures d'**exercices** — on prédit d'abord un prix au mètre carré, puis on construit un radar qui repère les biens de prestige et on chiffre en euros le coût de chaque erreur. La **correction** est publiée après.
+2 séances de 4h. Pour chacune : deux heures de **cours** suivies en séance, puis deux heures d'**étude de cas** — on prédit d'abord un prix au mètre carré, puis on construit un radar qui repère les biens de prestige et on chiffre en euros le coût de chaque erreur. La **correction** est publiée après.
 
-| Séance | Sujet | Cours | Exercices | Correction |
+| Séance | Sujet | Cours | Étude de cas | Correction |
 |---|---|---|---|---|
 | 4.1 | Le Machine Learning : prédire n'est pas expliquer | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/corrections/seance1_correction.ipynb) |
 | 4.2 | Prédire une décision — qui va résilier ? | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/exercices/seance2_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc4_ml_v2/corrections/seance2_correction.ipynb) |
