@@ -222,15 +222,24 @@ Identique à la version 1 : mêmes notebooks, rien à dupliquer.
 
 ## Bloc 2 — Collecter, comprendre et manipuler des données (6h)
 
-Six heures en deux temps. Le notebook de **cours** occupe les deux premières heures et contient aussi ses exercices : on montre une technique, vous la refaites aussitôt. L'**étude de cas** occupe les quatre suivantes — un export immobilier parisien de 61 000 lignes, du fichier brut jusqu'à la carte des prix. Chacun des deux a sa **solution**, publiée après la séance qu'il occupe.
+Six heures en deux temps. Le notebook de **cours** occupe les deux premières heures et contient aussi ses exercices : on montre une technique, vous la refaites aussitôt. L'**étude de cas** occupe les quatre suivantes — un export immobilier parisien de 61 000 lignes, du fichier brut jusqu'à la carte des prix. Entre les deux, une séance **à faire seul** — elle est ci-dessous, et l'étude de cas en a besoin. Chaque travail a sa **solution**, publiée après.
 
 | Séance | Sujet | Cours + exercices | Solution cours + exercices | Étude de cas | Solution étude de cas |
 |---|---|---|---|---|---|
 | 2.1 | Charger, comprendre et nettoyer une base de données | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance1_correction.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance1_correction_etude.ipynb) |
 
+### 📘 À faire en autonomie — avant la partie 3 de l'étude de cas
+
+**Les deux heures de cours ne suffisent pas à finir l'étude de cas.** Ses parties 3 et 4 tracent un histogramme, des barres, une courbe et un nuage de points, et calculent une corrélation — et le notebook de cours n'en montre aucun.
+
+C'est cette séance-ci qui les enseigne, `groupby` et `merge` compris, avec ses exercices dans le fil comme la 2.1. **Comptez deux heures, seul, entre la séance et l'étude de cas.** Le notebook de l'étude de cas vous le rappelle au bon endroit.
+
+| Séance | Sujet | Cours + exercices | Solution |
+|---|---|---|---|
+| 2.2 | Agréger, croiser et visualiser une base de données | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance2_correction.ipynb) |
+
 📚 **Pour aller plus loin**
 
-- **2.2 — Agréger, croiser et visualiser une base de données** — [Cours ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/cours/seance2_cours.ipynb) · [Correction ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance2_correction.ipynb)
 - **Le bloc 2 de la version 1, en trois séances** — [2.1 — Charger et comprendre ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance1_cours.ipynb) · [2.2 — Nettoyer des données réelles ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance2_cours.ipynb) · [2.3 — Agréger, croiser et visualiser ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance3_cours.ipynb)
 
 📄 **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
