@@ -190,3 +190,92 @@ classifieur spécialisé et un LLM génératif ne traitent pas de la même faço
 Avis **fictifs, écrits pour ce cours** : il n'y a pas de source publique, donc pas de `build_data.py`
 reproductible comme dans les autres blocs. Ce fichier n'est pas un benchmark et les taux de réussite
 mesurés en séance ne valent que pour lui.
+
+---
+
+# Version 2 — le parcours allégé
+
+Une seconde version du cours, plus courte : **30 heures** au lieu de 36. Elle
+suit le même fil et s'appuie sur les mêmes outils, mais elle va moins loin sur
+les blocs 3 et 4, et elle consacre beaucoup plus de temps à la pratique en
+autonomie — un long fil d'exercices sur les ventes immobilières parisiennes,
+du fichier brut jusqu'au modèle.
+
+**La version 1 reste au-dessus, intacte.** Ce qui a été retiré de la version 2
+n'est pas perdu : chaque bloc renvoie, sous « Pour aller plus loin », vers les
+séances de la version 1 qui le prolongent.
+
+---
+
+## Bloc 1 — Prise en main de Python et de Colab (2h)
+
+Identique à la version 1 : mêmes notebooks, rien à dupliquer.
+
+| Séance | Sujet | Cours + exercices | Correction |
+|---|---|---|---|
+| 1.1 | Prise en main — Colab, Markdown et vos premières lignes | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc1_python/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc1_python/corrections/seance1_correction.ipynb) |
+
+📄 **[Bien démarrer — surtout sur tablette](ressources/setup_tablette.md)** — à garder ouvert pendant les exercices.
+
+
+---
+
+## Bloc 2 — Collecter, comprendre et manipuler des données (6h)
+
+Six heures en deux temps. Le notebook de **cours** occupe les deux premières heures et contient aussi ses exercices : on montre une technique, vous la refaites aussitôt. L'**étude de cas** occupe les quatre suivantes — un export immobilier parisien de 61 000 lignes, du fichier brut jusqu'à la carte des prix. La **correction** reprend le cours entier avec ses solutions, puis le corrigé de l'étude de cas.
+
+| Séance | Sujet | Cours + exercices | Étude de cas | Correction |
+|---|---|---|---|---|
+| 2.1 | Charger, comprendre et nettoyer une base de données | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance1_correction.ipynb) |
+
+📚 **Pour aller plus loin**
+
+- **2.2 — Agréger, croiser et visualiser une base de données** — [Cours ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/cours/seance2_cours.ipynb) · [Correction ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees_v2/corrections/seance2_correction.ipynb)
+- **Le bloc 2 de la version 1, en trois séances** — [2.1 — Charger et comprendre ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance1_cours.ipynb) · [2.2 — Nettoyer des données réelles ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance2_cours.ipynb) · [2.3 — Agréger, croiser et visualiser ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc2_donnees/cours/seance3_cours.ipynb)
+
+📄 **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
+
+---
+
+### Les données du bloc 2 (version 2)
+
+Deux terrains. Le **cours** prend en main le détaillant en ligne de la
+version 1 — mêmes fichiers, rien de nouveau à télécharger. L'**étude de
+cas** travaille sur les ventes immobilières parisiennes publiées par
+l'administration fiscale, dans l'état où on les reçoit.
+
+| Fichier | Lignes | Contenu |
+|---|---|---|
+| `immo_paris_sale.csv` | 61 276 | L'export brut, **volontairement sale** : dates en deux écritures, prix en texte, catégories mal saisies, surfaces manquantes |
+| `immo_paris_2024.csv` | 25 209 | Le résultat du nettoyage : une ligne = une vente d'appartement. `vente_id`, `date`, `prix`, `rue`, `arrondissement`, `surface`, `pieces`, `longitude`, `latitude`, `prix_m2` |
+| `immo_paris_2023_2024.csv` | 52 941 | Les deux millésimes, plus une colonne `annee` — pour les blocs 3 et 4 de la version 2 |
+| `ventes.csv`, `clients.csv`, `produits.csv`, `ventes_sale.csv` | — | Les fichiers du bloc 2 de la version 1, repris tels quels par le cours |
+
+Immobilier : demandes de valeurs foncières géolocalisées ([DGFiP / Etalab](https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/), licence ouverte 2.0).
+**Ces trois fichiers ne se régénèrent pas** : les feuilles d'exercices contiennent 114 valeurs attendues calculées sur ces octets précis, et la source est republiée avec des corrections plusieurs fois par an. Le détail est dans [`bloc2_donnees_v2/data/README.md`](bloc2_donnees_v2/data/README.md).
+
+---
+
+## Bloc 5 — A/B testing (6h)
+
+Identique à la version 1 : mêmes notebooks, rien à dupliquer.
+
+| Séance | Sujet | Cours | Étude de cas | Correction |
+|---|---|---|---|---|
+| 5.1 | A/B testing — causalité et expériences randomisées | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc5_abtest/corrections/seance1_correction.ipynb) |
+
+📄 **[Aide-mémoire statistiques](ressources/cheatsheet_stats.md)** — à garder ouvert pendant les exercices.
+
+---
+
+## Pour aller beaucoup plus loin — science des données et LLMs (4h)
+
+Le bloc 6 de la version 1 ne fait pas partie du parcours allégé. Il reste
+publié pour qui veut continuer : comprendre ce qu'est un grand modèle de
+langage et où il échoue, distinguer LLM, RAG, appel d'outils, agent et MCP,
+puis appeler un modèle depuis Python sur un corpus d'avis clients.
+
+| Séance | Sujet | Cours | Atelier | Correction |
+|---|---|---|---|---|
+| 6.1 | Science des données et LLMs | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc6_llms/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc6_llms/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc6_llms/corrections/seance1_correction.ipynb) |
+
