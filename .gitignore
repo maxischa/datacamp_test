@@ -25,8 +25,11 @@ bloc*/intervenant/
 outils/
 
 # Syllabus de travail de l'equipe enseignante, pas un document etudiant.
+# Le dossier porte les syllabus officiels des deux departements et la
+# proposition de mise a jour : documents de travail, jamais distribues.
 Syllabus.docx
 Syllabus_détaillé_enseignants.docx
+sylllabus officiel/
 
 # Environnement de travail local de l'enseignant. Un etudiant n'installe rien :
 # tout se passe dans Colab. Publier un Pipfile laisserait croire le contraire.
@@ -40,8 +43,11 @@ Pipfile.lock
 improvements/
 
 # Examen papier : sujet ET corrige. Un examen publie avant l'epreuve ne vaut
-# plus rien, et le depot est public.
+# plus rien, et le depot est public. L'archive porte exactement le meme
+# contenu que le dossier : l'ignorer aussi, sinon un `git add -A` publie par
+# le zip ce que la ligne au-dessus protege.
 evaluation/
+evaluation.zip
 
 # Dossier a deposer dans Google Drive : copies derivees des notebooks, sans
 # badge Colab. Regenerable par `python outils/construire_drive.py`, et le
