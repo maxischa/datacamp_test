@@ -256,6 +256,42 @@ Immobilier : demandes de valeurs foncières géolocalisées ([DGFiP / Etalab](ht
 
 ---
 
+## Bloc 3 — Interpréter des données (8h)
+
+2 séances de 4h. Pour chacune : deux heures de **cours** suivies en séance, puis deux heures d'**exercices** — un long exercice d'un seul tenant sur l'immobilier parisien, qui reprend le fichier là où le bloc 2 l'avait laissé. La **correction** est publiée après.
+
+| Séance | Sujet | Cours | Exercices | Correction |
+|---|---|---|---|---|
+| 3.1 | Décrire une distribution | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/cours/seance1_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/exercices/seance1_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/corrections/seance1_correction.ipynb) |
+| 3.2 | Comparer deux groupes — hasard ou vrai écart ? | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/cours/seance2_cours.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/exercices/seance2_exercices.ipynb) | [▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats_v2/corrections/seance2_correction.ipynb) |
+
+📚 **Pour aller plus loin**
+
+- **Les deux séances que le parcours allégé ne reprend pas** — [3.3 — Relier deux variables ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance3_cours.ipynb) · [3.4 — Régression linéaire ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance4_cours.ipynb)
+- **Le bloc 3 de la version 1, en quatre séances** — [3.1 — Décrire une distribution ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance1_cours.ipynb) · [3.2 — Comparer deux groupes ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance2_cours.ipynb) · [3.3 — Relier deux variables ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance3_cours.ipynb) · [3.4 — Régression linéaire ▶](https://colab.research.google.com/github/maxischa/datacamp_test/blob/main/bloc3_stats/cours/seance4_cours.ipynb)
+
+📄 **[Aide-mémoire statistiques](ressources/cheatsheet_stats.md)** · **[Aide-mémoire pandas](ressources/cheatsheet_pandas.md)** — à garder ouvert pendant les exercices.
+
+---
+
+### Les données du bloc 3 (version 2)
+
+Deux terrains, comme au bloc 2. Le **cours** décrit les commandes du
+détaillant — mêmes fichiers que la version 1. Les **exercices**
+poursuivent le fil immobilier : le fichier que vous avez nettoyé au
+bloc 2 devient ici un estimateur de prix, puis vingt tests.
+
+| Fichier | Lignes | Contenu |
+|---|---|---|
+| `commandes.csv` | 1 955 | Une commande par ligne : `cmd_id`, `date`, `jour`, `ca`, `nart`, `qte`, `pays`, `client_id` — repris du bloc 3 de la version 1 |
+| `immo_paris_2024.csv` | 25 209 | Les ventes d'appartements parisiens de 2024, nettoyées au bloc 2 — pour la séance 3.1 |
+| `immo_paris_2023_2024.csv` | 52 941 | Les deux millésimes, plus une colonne `annee` — pour comparer 2023 et 2024 en séance 3.2 |
+
+Commandes : dérivées des fichiers du bloc 2 par [`bloc3_stats/data/build_data.py`](bloc3_stats/data/build_data.py).
+Immobilier : voir [les données du bloc 2 (version 2)](#les-données-du-bloc-2-version-2) — les fichiers sont servis depuis `bloc2_donnees_v2/data/` et **ne se régénèrent pas**.
+
+---
+
 ## Bloc 5 — A/B testing (6h)
 
 Identique à la version 1 : mêmes notebooks, rien à dupliquer.
