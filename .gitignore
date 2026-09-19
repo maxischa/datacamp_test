@@ -39,6 +39,10 @@ Pipfile.lock
 # des solutions et des notes de passation : le depot public n'en veut pas.
 improvements/
 
+# Examen papier : sujet ET corrige. Un examen publie avant l'epreuve ne vaut
+# plus rien, et le depot est public.
+evaluation/
+
 # Dossier a deposer dans Google Drive : copies derivees des notebooks, sans
 # badge Colab. Regenerable par `python outils/construire_drive.py`, et le
 # publier ici ne ferait que dupliquer le contenu du depot.
@@ -46,7 +50,7 @@ distribution_drive/
 
 # Pages locales : les listes de liens (course/exercises/solutions) et les
 # aide-memoire rendus depuis ressources/*.md. Toutes regenerables par
-# `python outils/construire_pages.py`, d'ou le motif plutot qu'une ligne par
-# fichier. Le point d'entree public reste le README : GitHub l'affiche, alors
-# qu'un .html s'y telechargerait — et les aide-memoire restent publies en .md.
-/*.html
+# `python outils/construire_pages.py`. Le point d'entree public reste le
+# README : GitHub l'affiche, alors qu'un .html s'y telechargerait — et les
+# aide-memoire restent publies en .md.
+pages/
