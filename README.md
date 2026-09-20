@@ -230,9 +230,9 @@ Six heures en deux temps. Le notebook de **cours** occupe les deux premières he
 
 ### 📘 À faire en autonomie — avant la partie 3 de l'étude de cas
 
-**Les deux heures de cours ne suffisent pas à finir l'étude de cas.** Ses parties 3 et 4 tracent un histogramme, des barres, une courbe et un nuage de points, et calculent une corrélation — et le notebook de cours n'en montre aucun.
+**Le notebook de cours ne suffit pas à finir l'étude de cas.** Ses parties 3 et 4 tracent un histogramme, des barres, une courbe et un nuage de points, et calculent une corrélation — et le cours n'en montre aucun.
 
-C'est cette séance-ci qui les enseigne, `groupby` et `merge` compris, avec ses exercices dans le fil comme la 2.1. **Comptez deux heures, seul, entre la séance et l'étude de cas.** Le notebook de l'étude de cas vous le rappelle au bon endroit.
+C'est cette séance-ci qui les enseigne. On y trouve ce qu'il faut savoir sur `groupby` et `merge`, et surtout **beaucoup de modèles de code de graphiques** à reprendre et à adapter. À faire seul entre la séance et l'étude de cas, puis à garder ouverte comme référence pendant celle-ci — le notebook de l'étude de cas vous le rappelle au bon endroit.
 
 | Séance | Sujet | Cours + exercices | Solution |
 |---|---|---|---|
